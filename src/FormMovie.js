@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
 
 class FormMovie extends React.Component {
   constructor (props) {
@@ -21,7 +22,17 @@ class FormMovie extends React.Component {
   }
 
   handleSubmitForm (e) {
-
+    e.preventDefault();
+    const url = 'https://post-a-form.herokuapp.com/api/movies/';
+    axios.post(url, this.state)
+      .then(res => res.data)
+      .then(res => {
+        alert(`Film ajouté avec l'ID ${res.id} !`)
+      })
+      .catch(e => {
+        console.error(e);
+        alert(`Erreur lors de l'ajout d'un film : ${e.message}`);
+      });
   }
 
   render () {
@@ -53,6 +64,10 @@ class FormMovie extends React.Component {
             rows='4'
             onChange={this.handleOnChange}
             value={this.state.comment}
+          />
+          <input
+            type='submit'
+            value='Envoyer'
           />
         </form>
       </div>
