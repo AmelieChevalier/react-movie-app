@@ -34,18 +34,24 @@ class FormMovie extends React.Component {
             type='text'
             id='title'
             name='title'
+            onchange={this.onChange}
+            value={this.state.title}
           />
           <label htmlFor='poster'>Lien vers l'affiche:</label>
           <input
             type='text'
             id='poster'
             name='poster'
+            onchange={this.onChange}
+            value={this.state.poster}
           />
           <label htmlFor='comment'>ton commentaire:</label>
           <input
             type='textarea'
             id='comment'
             name='comment'
+            onchange={this.onChange}
+            value={this.state.comment}
           />
         </form>
       </div>
