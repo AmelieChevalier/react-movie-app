@@ -10,11 +10,11 @@ class FormMovie extends React.Component {
       comment: ''
     };
 
-    this.onChange = this.onChange.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
   }
 
-  onChange (e) {
+  handleOnChange (e) {
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -29,12 +29,12 @@ class FormMovie extends React.Component {
       <div className='FormMovie'>
         <h1>Saisissez votre film préféré, ajoutez un lien vers son affiche et un commentaire epxliquant votre choix !</h1>
         <form onSubmit={this.handleSubmitForm}>
-          <label htmlFor='title'>Title:</label>
+          <label htmlFor='title'>Titre:</label>
           <input
             type='text'
             id='title'
             name='title'
-            onchange={this.onChange}
+            onChange={this.handleOnChange}
             value={this.state.title}
           />
           <label htmlFor='poster'>Lien vers l'affiche:</label>
@@ -42,7 +42,7 @@ class FormMovie extends React.Component {
             type='text'
             id='poster'
             name='poster'
-            onchange={this.onChange}
+            onChange={this.handleOnChange}
             value={this.state.poster}
           />
           <label htmlFor='comment'>ton commentaire:</label>
@@ -50,7 +50,7 @@ class FormMovie extends React.Component {
             type='textarea'
             id='comment'
             name='comment'
-            onchange={this.onChange}
+            onChange={this.handleOnChange}
             value={this.state.comment}
           />
         </form>
