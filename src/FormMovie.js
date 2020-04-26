@@ -27,7 +27,7 @@ class FormMovie extends React.Component {
   render () {
     return (
       <div className='FormMovie'>
-        <h1>Saisissez votre film préféré, ajoutez un lien vers son affiche et un commentaire epxliquant votre choix !</h1>
+        <h1>Hello Wilder ! Ecris ici ton film préféré, ajoute un lien vers son affiche et un commentaire epxliquant pourquoi tu aimes ce film.</h1>
         <form onSubmit={this.handleSubmitForm}>
           <label htmlFor='title'>Titre:</label>
           <input
@@ -46,10 +46,11 @@ class FormMovie extends React.Component {
             value={this.state.poster}
           />
           <label htmlFor='comment'>ton commentaire:</label>
-          <input
-            type='textarea'
+          <textarea
             id='comment'
             name='comment'
+            cols='50'
+            rows='4'
             onChange={this.handleOnChange}
             value={this.state.comment}
           />

@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.FormMovie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FormMovie form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.FormMovie form input, .FormMovie form textarea {
+  margin : 15px;
+}
